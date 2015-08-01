@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/mgk/rq-retry.svg?branch=master)](https://travis-ci.org/mgk/rq-retry)
 [![Coverage Status](https://coveralls.io/repos/mgk/rq-retry/badge.svg?branch=master&service=github)](https://coveralls.io/github/mgk/rq-retry?branch=master)
+[![Downloads](https://img.shields.io/pypi/dm/rq-retry.svg)](https://pypi.python.org/pypi/rq-retry)
 
 # RQ Retry
 
