@@ -1,0 +1,4 @@
+pytest
+pep8
+coveralls
+rq-scheduler>=0.5.1
