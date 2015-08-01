@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/mgk/rq-retry.svg?branch=master)](https://travis-ci.org/mgk/rq-retry)
+[![Coverage Status](https://coveralls.io/repos/mgk/rq-retry/badge.svg?branch=master&service=github)](https://coveralls.io/github/mgk/rq-retry?branch=master)
 
 # RQ Retry
 
 [RQ Retry](https://github.com/mgk/rq-retry) is a package that adds retry functionality to the [RQ](http://python-rq.org/) queueing system. It can retry failed jobs immediately or optionally schedule them to retry after a delay using [RQ Scheduler](https://github.com/ui/rq-scheduler).
-[![Coverage Status](https://coveralls.io/repos/mgk/rq-retry/badge.svg?branch=master&service=github)](https://coveralls.io/github/mgk/rq-retry?branch=master)
 
 ## Installation
 
@@ -48,14 +48,12 @@ This means that `RetryWorker` failed job handling is only performed when the `Re
 
 ## Developing
 
+Pull requests welcome.
+
+Getting started:
+
 ```console
-git clone git@github.com:mgk/rq-retry.git
-cd rq-retry
-make install
-make test
-make coverage
-... hack ...
-... send pull request ...
+make install test
 ```
 
 ## License
