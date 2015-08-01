@@ -3,6 +3,7 @@
 # RQ Retry
 
 [RQ Retry](https://github.com/mgk/rq-retry) is a package that adds retry functionality to the [RQ](http://python-rq.org/) queueing system. It can retry failed jobs immediately or optionally schedule them to retry after a delay using [RQ Scheduler](https://github.com/ui/rq-scheduler).
+[![Coverage Status](https://coveralls.io/repos/mgk/rq-retry/badge.svg?branch=master&service=github)](https://coveralls.io/github/mgk/rq-retry?branch=master)
 
 ## Installation
 
