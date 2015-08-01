@@ -16,7 +16,7 @@ class DeadLetterQueue(Queue):
     of dead letter queues.
     """
     def __init__(self, name, connection):
-        super().__init__(name=name, connection=connection)
+        super(DeadLetterQueue, self).__init__(name=name, connection=connection)
 
     def quarantine(self, job, queue):
         """Moves job from the specified queue to the dead letter queue"""

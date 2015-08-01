@@ -58,13 +58,14 @@ class RetryWorker(Worker):
         *Environment variable*: `RQ_RETRY_DEAD_LETTER_QUEUE`
         *Default*: 'dead_letter_queue'
     """
-    def __init__(self, *args, retry_config={}, **kwargs):
-
+    def __init__(self, *args, **kwargs):
         default_config = dict(
             maint_interval=timedelta(seconds=30),
             max_tries=3,
             delays=[5],
             dead_letter_queue='dead_letter_queue')
+
+        retry_config = kwargs.pop('retry_config', {})
 
         self.apply_config(retry_config, default_config)
         if not isinstance(self.maint_interval, timedelta):
@@ -79,7 +80,7 @@ class RetryWorker(Worker):
             except ValueError:
                 self.delays = []
 
-        super().__init__(*args, **kwargs)
+        super(RetryWorker, self).__init__(*args, **kwargs)
         self._dead_letter_queue = DeadLetterQueue(self.dead_letter_queue,
                                                   connection=self.connection)
 
@@ -99,7 +100,7 @@ class RetryWorker(Worker):
                   'dead_letter_queue']:
             self.log.info('{} = {}'.format(p, getattr(self, p)))
         self.log.info('Use RQ Scheduler? {}'.format(self.use_scheduler))
-        super().register_birth()
+        super(RetryWorker, self).register_birth()
 
     @property
     def use_scheduler(self):
@@ -113,7 +114,7 @@ class RetryWorker(Worker):
         )
 
     def clean_registries(self):
-        super().clean_registries()
+        super(RetryWorker, self).clean_registries()
         self.retry_failed_jobs()
 
     def retry_failed_jobs(self):

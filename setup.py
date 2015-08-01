@@ -22,7 +22,7 @@ class PyTest(TestCommand):
 
 setup(
     name='rq-retry',
-    version='0.0.1',
+    version='0.0.2',
     description='RQ retry worker and dead letter queue',
     long_description=__doc__,
     url='https://github.com/mgk/rq-retry',
@@ -54,6 +54,8 @@ setup(
         'Topic :: System :: Systems Administration',
         'Topic :: System :: Monitoring',
 
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',

@@ -1,4 +1,5 @@
 pytest
 pep8
 coveralls
+mock
 rq-scheduler>=0.5.1

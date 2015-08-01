@@ -1,5 +1,10 @@
 import pytest
-from unittest.mock import patch, Mock
+
+try:
+    from unittest.mock import patch, Mock
+except ImportError:
+    from mock import patch, Mock
+
 import os
 import logging
 from datetime import timedelta
