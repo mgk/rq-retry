@@ -14,18 +14,13 @@ pip install rq-scheduler # optional
 
 ```
 
-## Using
+## Usage
 
 Run worker process:
 
 ```console
 rqworker -w rq_retry.RetryWorker
-```
-
-If using RQ Scheduler run the scheduler daemon:
-
-```console
-rqscheduler
+rqscheduler # optional
 ```
 
 The `RetryWorker` performs work like a regular RQ `Worker`. In addition it periodically checks for jobs on the failed queue and requeues them to be run again. If a job fails too many times it is moved to the dead letter queue and will not be tried again.
@@ -36,7 +31,7 @@ The `RetryWorker` performs work like a regular RQ `Worker`. In addition it perio
 
 Name                | Default  | Description
 ------------------- | -------- | -----------
-RQ_RETRY_MAINT_INTERVAL      | 30       | How often, at most, to check for failed jobs. The cehck is not guaranteed to happen every `RQ_RETRY_MAINT_INTERVAL` seconds. See [Maintenance Tasks](#maintenance-tasks).
+RQ_RETRY_MAINT_INTERVAL      | 30       | How often, at most, to check for failed jobs. The check is not guaranteed to happen every `RQ_RETRY_MAINT_INTERVAL` seconds. See [Maintenance Tasks](#maintenance-tasks).
 RQ_RETRY_MAX_TRIES           | 3        | Maximum number of time a job may be attempted. This includes the first time the job was run. So a value of 3 will try the job 2 times. A value of 1 or less disables retry. Zero has no special meaning.
 RQ_RETRY_RETRY_DELAYS        | 5        | How long to delay each job retry in seconds. This can be a single float value or a comma separated list of floats. A simple  [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) can be achieved by using a value like `3,10,60`. This causes the first retry of each job to be delayed 3 seconds, the second retry 10 seconds, and the third and subsequent retries to be delayed 60 seconds. To disable, set to any non numeric value like `disabled`. When delays are disabled jobs are requeued immediately without using [RQ Scheduler](https://github.com/ui/rq-scheduler).
 RQ_RETRY_DEAD_LETTER_QUEUE   | dead_letter_queue | name of dead letter queue
@@ -58,5 +53,4 @@ make install test
 ```
 
 ## License
-
-See [LICENSE](LICENSE)
+[MIT License](https://github.com/mgk/rq-retry/blob/master/LICENSE)
