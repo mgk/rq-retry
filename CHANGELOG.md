@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 
-## [0.1.0] - 2015-08-02
+## [0.2.0] - 2015-08-02
 ### Added
 - add wheel build
 
