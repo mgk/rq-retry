@@ -49,7 +49,18 @@ Pull requests welcome.
 Getting started:
 
 ```console
-make install test
+make install-dev
+make test
+```
+
+*Note for conda users*
+If you're using [conda](http://conda.pydata.org/docs/) the tests will likely fail for the version of python in your current conda env. To solve this set `PYTHON_PATH` and `PATH` to point at a Python not managed by conda. For example on OS X:
+
+```console
+export PYTHON_ROOT="/Library/Frameworks/Python.framework/Versions/3.4"
+export PATH="$PYTHON_ROOT/bin:$PATH"
+make install-dev
+make test
 ```
 
 ## License

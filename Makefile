@@ -12,7 +12,7 @@ install:
 install-dev: install
 	pip install -r requirements-dev.txt
 
-release: clean
+release: clean test
 	bumpversion release
 	python setup.py sdist bdist_wheel
 	twine upload -r pypitest dist/*
@@ -28,8 +28,7 @@ release: clean
 
 test:
 	pep8 rq_retry
-	py.test
-	python tests/run_no_rq_scheduler_test.py
+	tox
 
 coverage:
 	coverage run --source=rq_retry setup.py test
