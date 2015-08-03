@@ -3,9 +3,16 @@ sudo: false
 language: python
 
 python:
+  - 3.5.0b3
   - 3.4
   - 3.3
+  - 3.2
   - 2.7
+  - pypy
+
+matrix:
+  allow_failures:
+    - python: 3.5.0b3
 
 services:
   - redis-server
