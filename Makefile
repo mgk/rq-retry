@@ -31,7 +31,7 @@ test:
 	tox
 
 coverage:
-	coverage run --source=rq_retry setup.py test
+	coverage run --source=rq_retry -m py.test
 	coverage run -a --source=rq_retry tests/run_no_rq_scheduler_test.py
 	coverage html
 
