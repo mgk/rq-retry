@@ -2,8 +2,8 @@
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
-### Added
-
+## Fixed
+- doc: fix spelling of `RQ_RETRY_DELAYS`
 
 ## [0.2.0] - 2015-08-02
 ### Added
