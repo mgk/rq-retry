@@ -55,7 +55,7 @@ make test
 
 *Note for conda users*
 
-If you're using [conda](http://conda.pydata.org/docs/) the some tox envs may not be able to run tests. To solve this update your `PATH` so that no `python`, `python3`, etc. points at a Python managed by conda. For example on OS X:
+If you're using [conda](http://conda.pydata.org/docs/) some tox envs may not be able to run tests. To solve this update your `PATH` so that no `python`, `python3`, etc. points at a Python managed by conda. For example on OS X:
 
 ```console
 export PYTHON_ROOT="/Library/Frameworks/Python.framework/Versions/3.4"
