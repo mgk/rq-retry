@@ -2,6 +2,16 @@
 This project uses [Semantic Versioning](http://semver.org/).
 
 ## *Unreleased*
+### Added
+- stuff
+
+### Changed
+- things
+
+### Fixed
+- bugs
+
+## [0.3.0](https://github.com/mgk/rq-retry/releases/tag/v0.3.0) - [2015-08-04]
 ### Fixed
 - doc: fix spelling of `RQ_RETRY_DELAYS`
 
