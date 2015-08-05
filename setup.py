@@ -47,7 +47,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rq-retry',
-    version='0.3.0',
+    version='0.4.0-dev',
     description='RQ retry support',
     long_description=__doc__,
     url='https://github.com/mgk/rq-retry/blob/master/README.md',
