@@ -1,4 +1,6 @@
 wheel
-bumpversion
 twine
 tox
+
+--allow-unverified bumpversion
+https://github.com/mgk/bumpversion/zipball/post-hook

@@ -3,6 +3,8 @@ build: clean
 
 clean:
 	$(RM) -fr build dist *.egg-info .coverage htmlcov
+
+very-clean: clean
 	find . -name '*.pyc' | xargs rm -f
 
 install:
@@ -13,18 +15,16 @@ install-dev: install
 	pip install -r requirements-dev.txt
 
 release: clean test
-	bumpversion release
+	PYTHONPATH=. bumpversion --post-hook bump.hook release
 	python setup.py sdist bdist_wheel
 	twine upload -r pypitest dist/*
-	bumpversion --no-tag minor
+	PYTHONPATH=. bumpversion --no-tag --post-hook bump.hook minor
 	@echo
 	@echo "so far so good..."
-	@echo "wait for build green then:"
+	@echo "wait for Travis green light, then:"
 	@echo
 	@echo "git push origin master --tags"
 	@echo "twine upload dist/*"
-	@echo
-	@echo
 
 test:
 	pep8 rq_retry
