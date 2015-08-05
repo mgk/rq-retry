@@ -18,12 +18,12 @@ release: clean test
 	PYTHONPATH=. bumpversion --post-hook bump.hook release
 	python setup.py sdist bdist_wheel
 	twine upload -r pypitest dist/*
+	git push origin master --tags
 	PYTHONPATH=. bumpversion --no-tag --post-hook bump.hook minor
 	@echo
 	@echo "so far so good..."
 	@echo "wait for Travis green light, then:"
 	@echo
-	@echo "git push origin master --tags"
 	@echo "twine upload dist/*"
 
 test:
