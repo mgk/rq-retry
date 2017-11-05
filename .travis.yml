@@ -3,16 +3,17 @@ sudo: false
 language: python
 
 python:
-  - 3.5.0b3
+  - nightly
+  - 3.6
+  - 3.5
   - 3.4
   - 3.3
-  - 3.2
   - 2.7
   - pypy
 
 matrix:
   allow_failures:
-    - python: 3.5.0b3
+    - python: nightly
 
 services:
   - redis-server
